@@ -11,7 +11,7 @@ dotenv.config()
 app.use(helmet())
 app.use(morgan('common'))
 
-const port = process.env.PORT ||4000
+const port = process.env.PORT ||3200
 
 app.use(cors());
 app.use(express.json());
@@ -25,7 +25,7 @@ app.get('/', (req, res) =>{
 
 const worksRoutes = require('./routes/work.routes')
 
-app.use('api/v1/works',worksRoutes)
+app.use('/api/v1/works',worksRoutes)
 
 
 

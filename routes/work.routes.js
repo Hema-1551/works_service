@@ -4,7 +4,7 @@ const workController = require('../controller/work.controller')
 
 
 // For posting the work
-router.post('/post',workController.createWork);
+router.post('/',workController.createWork);
 
 //For getting all works
 
