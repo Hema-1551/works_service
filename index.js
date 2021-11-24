@@ -36,7 +36,7 @@ app.use('/api/v1/works',worksRoutes)
 
 // using user routes as middleware
 
-
+//normal
 mongoose.connect(process.env.MONGO_URL,
     {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
