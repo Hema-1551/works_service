@@ -6,8 +6,7 @@ const workController = require('../controller/work.controller')
 // For posting the work
 router.post('/',workController.createWork);
 
-//For getting all works
-
+//For fetching all works
 router.get('/',workController.getAllWorks);
 
 //For retrieving single work
@@ -18,6 +17,7 @@ router.delete('/:workId',workController.deleteWorkById)
 
 //For update work
 router.put('/:workId',workController.updateWorkById)
+
 
 
 

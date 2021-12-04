@@ -16,8 +16,61 @@ exports.createWork = async (req, res) => {
 
 exports.getAllWorks = async (req, res) => {
     try {
-        const works = await worksCollectionReference.find()
-        res.status(200).json(works)
+
+        // if there are any query parameters
+
+        // for filter of works 
+
+        // get those query parameters on filter the following
+
+        // filter works by worktype
+
+
+        const filterBy = req.query.filterBy;
+
+        const workType = req.query.workType;
+
+        const amount = req.query.amount;
+
+        const lattitude = req.query.lat;
+
+        const longitude = req.query.long;
+
+       
+
+        switch(filterBy)
+        {
+            case 'LOCATION' :  // check if longitude and latitude are present in the query params
+
+                                if(lattitude === undefined) return res.status(400).send("lattitude query parameter requried!");
+
+                                if(longitude === undefined) return res.status(400).send("longitude query parameter required!");
+
+
+                                break;
+
+            case 'WORKTYPE' :  
+                               // check if workType query param exists
+
+                               if(workType === undefined) res.status(400).send("workType query parameter required!")
+
+                               break;
+                               // filter works in databse using worktype
+                               //const worksByWorkType = await worksCollectionReference.find({"workType" : req.query.work})
+
+            case 'AMOUNT' : res.send('filter by amount')
+                            break;
+
+            default: 
+                
+             // no filter applied
+             const works = await worksCollectionReference.find()
+             res.status(200).json(works)
+
+             break;
+
+        }
+
     } catch (error) {
         res.status(500).json(error)
     }

@@ -41,6 +41,11 @@ const WorksSchema = new mongoose.Schema({
         required:true
     },
 
+    workType:{
+        type:String,
+        required:true
+    },
+
     // Single subdocument
     location:locationSchema_child,
    
