@@ -36,10 +36,13 @@ const WorksSchema = new mongoose.Schema({
         type:String,
         required:false
     },
+    amount:{
+        type:Number,
+        required:true
+    },
+
     // Single subdocument
     location:locationSchema_child,
-    
-
    
     //Array of subdocuments
     children:[locationSchema_child]
