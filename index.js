@@ -20,7 +20,7 @@ app.use(express.urlencoded({
 }))
 
 app.get('/', (req, res) =>{
-    res.send('<h1> Works Service</h1>')
+    res.send('<center> <h1> Works Service</h1> </center>')
 })
 
 const worksRoutes = require('./routes/work.routes')
